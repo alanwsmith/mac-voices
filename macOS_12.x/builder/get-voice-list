@@ -1,0 +1,7 @@
+#!/bin/bash
+
+say -v "?" > ../voices.txt
+
+mkdir ../aiffs
+mkdir ../mp3s
+
