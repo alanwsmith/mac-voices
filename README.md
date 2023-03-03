@@ -16,4 +16,6 @@ contain the output of the macs `say` command
 for each voice with the corresponding 
 test phrase. 
 
+The `macOS_12.x/links.html` is a web page
+with the samples embeded for easier listening. 
 

@@ -6,6 +6,8 @@ import subprocess
 with open("../voices.txt") as _voices:
     voices = _voices.read().split("\n")
 
+output = ""
+
 for voice in voices:
     matches = re.search(r'(.*?)\s+\S+\s+#\s+(.*)', voice)
     if matches:
@@ -33,5 +35,19 @@ for voice in voices:
             f"../mp3s/{name_lc}.mp3",
         ]
         subprocess.run(mp3_command)
+
+        output += f"""<div class="voice_wrapper>
+  <div class="voice_name">{name_lc}</div>
+  <div class="voice_sample">
+    <audio controls preload="none">
+      <source src="https://github.com/alanwsmith/text-to-speech-voices/blob/main/macOS_12.x/mp3s/{name_lc}.mp3?raw=true" type="audio/mpeg" />
+    </audio>
+  </div>
+</div>
+"""
+
+
+with open("../links.html", "w") as _out:
+    _out.write(output)
 
             
