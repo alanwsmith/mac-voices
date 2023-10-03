@@ -17,11 +17,11 @@ for voice in voices:
 
         print(f"aiff: {name_lc}")
         aiff_command = [
-            "say", 
-            "--voice", 
+            "say",
+            "--voice",
             name,
             text,
-            "-o", 
+            "-o",
             f"../aiffs/{name_lc}.aiff"
         ]
         subprocess.run(aiff_command)
@@ -36,7 +36,7 @@ for voice in voices:
         ]
         subprocess.run(mp3_command)
 
-        output += f"""<div class="voice_wrapper>
+        output += f"""<div class="voice_wrapper">
   <div class="voice_name">{name_lc}</div>
   <div class="voice_sample">
     <audio controls preload="none">
@@ -49,5 +49,3 @@ for voice in voices:
 
 with open("../links.html", "w") as _out:
     _out.write(output)
-
-            
